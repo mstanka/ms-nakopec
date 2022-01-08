@@ -1,6 +1,7 @@
 import fs from "fs";
 import matter from "gray-matter";
 import Link from "next/link";
+import Head from "next/head";
 import path from "path";
 import Layout from "../components/Layout";
 import CustomLink from "../components/CustomLink";
@@ -22,6 +23,13 @@ export default function Index({ posts }) {
   return (
     <MDXProvider components={components}>
       <Layout>
+        <Head>
+          <title>Na kopec</title>
+          <meta
+            name="viewport"
+            content="initial-scale=1.0, width=device-width"
+          />
+        </Head>
         <Home />
         <ul>
           {posts.map((post) => (
