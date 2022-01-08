@@ -31,14 +31,14 @@ export default function PostPage({ source, frontMatter }) {
       <header>
         <nav>
           <Link href="/">
-            <a className="link">👈 Go back home</a>
+            <a className="link">👈 Zpět domů</a>
           </Link>
         </nav>
       </header>
       <div>
         <h1>{frontMatter.title.substring(11)}</h1>
         <h3 className="text-stone-500 text-center mb-10">
-          Created: <date>{frontMatter.date}</date>
+          Datum: <date>{frontMatter.date}</date>
         </h3>
       </div>
       <main>
