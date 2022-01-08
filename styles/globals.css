@@ -15,4 +15,7 @@
   blockquote {
     @apply p-4 italic;
   }
+  button {
+    @apply my-2 mr-1 py-1 px-4 border-solid border-2 border-stone-300 rounded hover:border-dotted;
+  }
 }
