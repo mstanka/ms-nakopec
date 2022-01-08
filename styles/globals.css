@@ -4,10 +4,13 @@
 
 @layer base {
   h1 {
-    @apply text-5xl text-stone-700 text-center font-tillana tracking-wide;
+    @apply text-5xl text-stone-700 text-center font-tillana tracking-wide py-4;
   }
   h2 {
     @apply text-xl;
+  }
+  h3 {
+    @apply text-sm;
   }
   p {
     @apply text-lg py-4;
@@ -16,6 +19,6 @@
     @apply p-4 italic;
   }
   button {
-    @apply my-2 mr-1 py-1 px-4 border-solid border-2 border-stone-300 rounded hover:border-dotted;
+    @apply my-2 mr-1 py-1 px-4 border-solid border-2 border-stone-300 rounded text-stone-500 hover:border-dotted;
   }
 }

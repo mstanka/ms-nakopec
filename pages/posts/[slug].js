@@ -35,18 +35,23 @@ export default function PostPage({ source, frontMatter }) {
           </Link>
         </nav>
       </header>
-      <div className="post-header">
-        <h1>{frontMatter.title}</h1>
-        {frontMatter.tags &&
-          frontMatter.tags.map((tag) => (
-            <button type="button" className="tag" key="tag">
-              {tag}
-            </button>
-          ))}
+      <div>
+        <h1>{frontMatter.title.substring(11)}</h1>
+        <h3 className="text-stone-500 text-center mb-10">
+          Created: <date>{frontMatter.date}</date>
+        </h3>
       </div>
       <main>
         <MDXRemote {...source} components={components} />
       </main>
+      <div className="flex justify-center mt-8">
+        {frontMatter.tags &&
+          frontMatter.tags.map((tag) => (
+            <button type="button" key="tag">
+              {tag}
+            </button>
+          ))}
+      </div>
     </Layout>
   );
 }
