@@ -39,7 +39,7 @@ export default function PostPage({ source, frontMatter }) {
         <h1>{frontMatter.title}</h1>
         {frontMatter.tags &&
           frontMatter.tags.map((tag) => (
-            <button type="button" className="tag">
+            <button type="button" className="tag" key="tag">
               {tag}
             </button>
           ))}
@@ -47,27 +47,6 @@ export default function PostPage({ source, frontMatter }) {
       <main>
         <MDXRemote {...source} components={components} />
       </main>
-
-      <style jsx>{`
-        .post-header h1 {
-          margin-bottom: 0;
-        }
-        .post-header {
-          margin-bottom: 2rem;
-        }
-        .description {
-          opacity: 0.6;
-        }
-        .tag {
-          padding: 0.2rem 0.5rem;
-          margin-right: 0.3rem;
-          border-radius: 0.3rem;
-          border: 1px solid grey;
-        }
-        .link {
-          text-decoration: none;
-        }
-      `}</style>
     </Layout>
   );
 }

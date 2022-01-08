@@ -8,6 +8,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@babel/core": "^7.16.7",
     "@mdx-js/loader": "^0.15.4",
     "@mdx-js/mdx": "^0.15.4",
     "@mdx-js/react": "^1.6.22",

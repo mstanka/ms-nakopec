@@ -6,12 +6,6 @@ export default function CustomLink({ as, href, ...otherProps }) {
       <Link as={as} href={href}>
         <a {...otherProps} />
       </Link>
-      <style jsx>{`
-        a {
-          color: tomato;
-          text-decoration: none;
-        }
-      `}</style>
     </>
   );
 }
