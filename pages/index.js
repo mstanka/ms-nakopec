@@ -9,6 +9,7 @@ import { postFilePaths, POSTS_PATH } from "../utils/mdxUtils";
 import { MDXProvider } from "@mdx-js/react";
 import Image from "next/image";
 import Home from "./Home";
+import Footer from "../components/Footer";
 
 const ResponsiveImage = (props) => (
   <Image alt={props.alt} layout="responsive" {...props} />
@@ -43,6 +44,7 @@ export default function Index({ posts }) {
             </li>
           ))}
         </ul>
+        <Footer />
       </Layout>
     </MDXProvider>
   );

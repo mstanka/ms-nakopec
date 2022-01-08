@@ -9,6 +9,7 @@ import Image from "next/image";
 import path from "path";
 import CustomLink from "../../components/CustomLink";
 import Layout from "../../components/Layout";
+import Footer from "../../components/Footer";
 import { postFilePaths, POSTS_PATH } from "../../utils/mdxUtils";
 
 // Custom components/renderers to pass to MDX.
@@ -52,6 +53,7 @@ export default function PostPage({ source, frontMatter }) {
             </button>
           ))}
       </div>
+      <Footer />
     </Layout>
   );
 }
