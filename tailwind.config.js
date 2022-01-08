@@ -7,6 +7,7 @@ module.exports = {
     extend: {
       fontFamily: {
         kumbh: ["Kumbh Sans", "sans-serif"],
+        tillana: ["Tillana, cursive"]
       },
     },
   },

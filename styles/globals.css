@@ -4,7 +4,7 @@
 
 @layer base {
   h1 {
-    @apply text-5xl text-stone-700 text-center;
+    @apply text-5xl text-stone-700 text-center font-tillana tracking-wide;
   }
   h2 {
     @apply text-xl;
