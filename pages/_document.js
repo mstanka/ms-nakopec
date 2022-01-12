@@ -6,7 +6,11 @@ export default class MyDocument extends Document {
       <Html lang="cs-cz">
         <Head>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+          <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossOrigin="true"
+          />
           <link
             href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;400;700&family=Tillana&display=swap"
             rel="stylesheet"
@@ -23,7 +27,7 @@ export default class MyDocument extends Document {
           <meta name="twitter:description" content={meta.description} />
           <meta name="twitter:image" content={meta.image} /> */}
         </Head>
-        <body className="text-stone-900 font-kumbh">
+        <body className="text-stone-900 bg-stone-100 font-kumbh">
           <Main />
           <NextScript />
         </body>

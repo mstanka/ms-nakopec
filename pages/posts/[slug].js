@@ -4,12 +4,10 @@ import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 // import dynamic from "next/dynamic";
 import Head from "next/head";
-import Link from "next/link";
 import Image from "next/image";
 import path from "path";
 import CustomLink from "../../components/CustomLink";
 import Layout from "../../components/Layout";
-import Footer from "../../components/Footer";
 import { postFilePaths, POSTS_PATH } from "../../utils/mdxUtils";
 
 // Custom components/renderers to pass to MDX.
@@ -31,9 +29,12 @@ export default function PostPage({ source, frontMatter }) {
     <Layout>
       <header>
         <nav>
-          <Link href="/">
-            <a className="link">👈 Zpět domů</a>
-          </Link>
+          <CustomLink href="/">
+            <a className="link">👈 Domů</a>
+          </CustomLink>
+          <CustomLink href="/posts">
+            <a className="link">👈 Nejnovější příspěvky</a>
+          </CustomLink>
         </nav>
       </header>
       <div>
@@ -53,7 +54,6 @@ export default function PostPage({ source, frontMatter }) {
             </button>
           ))}
       </div>
-      <Footer />
     </Layout>
   );
 }
