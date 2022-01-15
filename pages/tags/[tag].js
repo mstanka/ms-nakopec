@@ -8,7 +8,7 @@ import Image from "next/image";
 import path from "path";
 import CustomLink from "../../components/CustomLink";
 import Layout from "../../components/Layout";
-import { postFilePaths, POSTS_PATH } from "../../utils/mdxUtils";
+import { tagFilePaths, TAGS_PATH } from "../../utils/mdxUtils";
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -24,7 +24,7 @@ const components = {
   Head,
 };
 
-export default function PostPage({ source, frontMatter }) {
+export default function TagPage({ source, frontMatter }) {
   return (
     <Layout>
       <header>
@@ -32,35 +32,24 @@ export default function PostPage({ source, frontMatter }) {
           <CustomLink href="/">
             <a className="link">⬅️ Domů</a>
           </CustomLink>
-          <CustomLink href="/posts">
-            <a className="link">⬅️ Nejnovější příspěvky</a>
+          <CustomLink href="/tags">
+            <a className="link">⬅️ Kategorie</a>
           </CustomLink>
         </nav>
       </header>
       <div>
-        <h1>{frontMatter.title.substring(11)}</h1>
-        <h3 className="text-stone-500 text-center mb-10">
-          Datum: <date>{frontMatter.date}</date>
-        </h3>
+        <h1>{frontMatter.title}</h1>
       </div>
       <main>
         <MDXRemote {...source} components={components} />
       </main>
-      <div className="flex justify-center mt-8">
-        {frontMatter.tags &&
-          frontMatter.tags.map((tag) => (
-            <button type="button" key="tag">
-              {tag}
-            </button>
-          ))}
-      </div>
     </Layout>
   );
 }
 
 export const getStaticProps = async ({ params }) => {
-  const postFilePath = path.join(POSTS_PATH, `${params.slug}.mdx`);
-  const source = fs.readFileSync(postFilePath);
+  const tagFilePath = path.join(TAGS_PATH, `${params.tag}.mdx`);
+  const source = fs.readFileSync(tagFilePath);
 
   const { content, data } = matter(source);
 
@@ -82,11 +71,11 @@ export const getStaticProps = async ({ params }) => {
 };
 
 export const getStaticPaths = async () => {
-  const paths = postFilePaths
+  const paths = tagFilePaths
     // Remove file extensions for page paths
     .map((path) => path.replace(/\.mdx?$/, ""))
     // Map the path into the static paths object required by Next.js
-    .map((slug) => ({ params: { slug } }));
+    .map((tag) => ({ params: { tag } }));
 
   return {
     paths,

@@ -2,22 +2,22 @@ import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
 import CustomLink from "../../components/CustomLink";
-import { postFilePaths, POSTS_PATH } from "../../utils/mdxUtils";
+import { tagFilePaths, TAGS_PATH } from "../../utils/mdxUtils";
 
-export default function Posts({ posts }) {
+export default function Tags({ tags }) {
   return (
     <>
       <CustomLink href="/">
         <a className="link">⬅️ Domů</a>
       </CustomLink>
       <ul>
-        {posts.map((post) => (
-          <li key={post.filePath}>
+        {tags.map((tag) => (
+          <li key={tag.tagPath}>
             <CustomLink
-              as={`/posts/${post.filePath.replace(/\.mdx?$/, "")}`}
-              href={`/posts/[slug]`}
+              as={`/tags/${tag.filePath.replace(/\.mdx?$/, "")}`}
+              href={`/tags/[tag]`}
             >
-              <a>{post.data.title}</a>
+              <a>{tag.data.title}</a>
             </CustomLink>
           </li>
         ))}
@@ -27,8 +27,8 @@ export default function Posts({ posts }) {
 }
 
 export function getStaticProps() {
-  const posts = postFilePaths.map((filePath) => {
-    const source = fs.readFileSync(path.join(POSTS_PATH, filePath));
+  const tags = tagFilePaths.map((filePath) => {
+    const source = fs.readFileSync(path.join(TAGS_PATH, filePath));
     const { content, data } = matter(source);
 
     return {
@@ -38,5 +38,5 @@ export function getStaticProps() {
     };
   });
 
-  return { props: { posts } };
+  return { props: { tags } };
 }

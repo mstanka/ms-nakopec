@@ -6,7 +6,10 @@ export default function Index() {
     <main>
       <Home />
       <Link href="/posts">
-        <a className="link">Nejnovější příspěvky 👈</a>
+        <a className="link">➡️ Nejnovější příspěvky </a>
+      </Link>
+      <Link href="/tags">
+        <a className="link">➡️ Kategorie</a>
       </Link>
     </main>
   );
