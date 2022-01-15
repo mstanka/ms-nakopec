@@ -7,7 +7,6 @@ import Head from "next/head";
 import Image from "next/image";
 import path from "path";
 import CustomLink from "../../components/CustomLink";
-import Layout from "../../components/Layout";
 import { postFilePaths, POSTS_PATH } from "../../utils/mdxUtils";
 
 // Custom components/renderers to pass to MDX.
@@ -26,7 +25,7 @@ const components = {
 
 export default function PostPage({ source, frontMatter }) {
   return (
-    <Layout>
+    <>
       <header>
         <nav>
           <CustomLink href="/">
@@ -47,14 +46,14 @@ export default function PostPage({ source, frontMatter }) {
         <MDXRemote {...source} components={components} />
       </main>
       <div className="flex justify-center mt-8">
-        {frontMatter.tags &&
-          frontMatter.tags.map((tag) => (
-            <button type="button" key="tag">
-              {tag}
-            </button>
-          ))}
+        <CustomLink
+          as={`/tags/${(frontMatter.tags).toLowerCase()}`}
+          href={`/tags/[tag]`}
+        >
+          <a>{frontMatter.tags}</a>
+        </CustomLink>
       </div>
-    </Layout>
+    </>
   );
 }
 

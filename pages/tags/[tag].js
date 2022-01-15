@@ -7,7 +7,6 @@ import Head from "next/head";
 import Image from "next/image";
 import path from "path";
 import CustomLink from "../../components/CustomLink";
-import Layout from "../../components/Layout";
 import { tagFilePaths, TAGS_PATH } from "../../utils/mdxUtils";
 
 // Custom components/renderers to pass to MDX.
@@ -26,7 +25,7 @@ const components = {
 
 export default function TagPage({ source, frontMatter }) {
   return (
-    <Layout>
+    <>
       <header>
         <nav>
           <CustomLink href="/">
@@ -43,7 +42,7 @@ export default function TagPage({ source, frontMatter }) {
       <main>
         <MDXRemote {...source} components={components} />
       </main>
-    </Layout>
+    </>
   );
 }
 
