@@ -20,7 +20,7 @@ export default function Posts({ posts }) {
               href={`/posts/[slug]`}
             >
               <a>
-                <div className="flex flex-col sm:flex-row items-center justify-between border border-stone-300 p-2 rounded-sm shadow-md">
+                <div className="flex flex-col sm:flex-row items-center justify-between border border-stone-300 px-4 py-6 rounded-sm shadow-md">
                     <Image
                       src={post.data.coverImage}
                       alt={post.data.title}
