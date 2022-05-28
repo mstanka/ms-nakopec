@@ -27,19 +27,19 @@ export default function PostPage({ source, frontMatter }) {
   return (
     <>
       <header>
-        <nav>
+        <nav className="pb-6">
           <CustomLink href="/">
             <a className="link">⬅️ Domů</a>
           </CustomLink>
           <CustomLink href="/posts">
-            <a className="link">⬅️ Nejnovější příspěvky</a>
+            <a className="link"> ⬅️ Nejnovější příspěvky</a>
           </CustomLink>
         </nav>
       </header>
       <div>
         <h1>{frontMatter.title.substring(11)}</h1>
-        <h3 className="text-stone-500 text-center mb-10">
-          Datum: <date>{frontMatter.date}</date>
+        <h3 className="text-center mb-10">
+          <date>{frontMatter.date}</date>
         </h3>
       </div>
       <main>
@@ -50,7 +50,7 @@ export default function PostPage({ source, frontMatter }) {
           as={`/tags/${(frontMatter.tags).toLowerCase()}`}
           href={`/tags/[tag]`}
         >
-          <a>{frontMatter.tags}</a>
+          <a className="bg-cyan-700 text-stone-200 px-4 py-2 rounded-full">{frontMatter.tags}</a>
         </CustomLink>
       </div>
     </>

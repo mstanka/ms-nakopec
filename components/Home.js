@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <>
-      <h1 className="py-8 uppercase ">Na kopec</h1>
+      <h1 className="py-8 uppercase">Na kopec</h1>
       <p>
         Děkuji, že jste našli cestu a přišli se podívat na můj kopec. Na
         stránky, které vypráví můj příběh, proč jdu na kopec. Je to příběh o

@@ -7,7 +7,7 @@ import { tagFilePaths, TAGS_PATH } from "../../utils/mdxUtils";
 export default function Tags({ tags }) {
   return (
     <>
-      <CustomLink href="/">
+      <CustomLink href="/" className="block mb-6">
         <a className="link">⬅️ Domů</a>
       </CustomLink>
       <ul>
