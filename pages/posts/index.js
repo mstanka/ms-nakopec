@@ -26,7 +26,7 @@ export default function Posts({ posts }) {
           .map((post) => (
             <li
               key={post.filePath}
-              className="flex flex-col justify-between text-center border border-stone-300 px-4 py-6 rounded-sm shadow-md"
+              className="flex flex-col justify-between items-center text-center border border-stone-300 px-4 py-6 rounded-sm shadow-md  transition ease-in-out duration-500 hover:scale-105 hover:bg-stone-100"
             >
               <div>
                 <CustomLink
@@ -44,10 +44,17 @@ export default function Posts({ posts }) {
                 </CustomLink>
               </div>
               <div className="py-6 text-center">
-                <h2 className="w-52 m-auto">{post.data.title.substring(11)}</h2>
-                <h3>{post.data.date}</h3>
+                <CustomLink
+                  as={`/posts/${post.filePath.replace(/\.mdx?$/, "")}`}
+                  href={`/posts/[slug]`}
+                >
+                  <h2 className="w-52 m-auto">
+                    {post.data.title.substring(11)}
+                  </h2>
+                  <small className="text-stone-500">{post.data.date}</small>
+                </CustomLink>
               </div>
-              <div className="bg-cyan-700 text-stone-200 px-4 py-1 rounded-full -mt-1">
+              <div className="bg-cyan-700 text-stone-200 px-4 py-1 rounded-full">
                 {" "}
                 {post.data.tags}
               </div>
