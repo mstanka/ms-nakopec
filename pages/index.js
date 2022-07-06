@@ -9,9 +9,9 @@ export default function Index() {
         <Link href="/posts">
           <a className="link">➡️ Nejnovější příspěvky </a>
         </Link>
-        <Link href="/tags">
+        {/* <Link href="/tags">
           <a className="link">➡️ Kategorie</a>
-        </Link>
+        </Link> */}
       </div>
     </main>
   );
