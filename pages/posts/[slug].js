@@ -29,10 +29,13 @@ export default function PostPage({ source, frontMatter }) {
       <header>
         <nav className="pb-6">
           <CustomLink href="/">
-            <a className="link">⬅️ Domů</a>
+            <a className="link">➡️ Domů</a>
           </CustomLink>
           <CustomLink href="/posts">
-            <a className="link"> ⬅️ Nejnovější příspěvky</a>
+            <a className="link"> ➡️ Nejnovější příspěvky</a>
+          </CustomLink>
+          <CustomLink href="/tags">
+            <a className="link"> ➡️ Kategorie</a>
           </CustomLink>
         </nav>
       </header>
@@ -47,10 +50,12 @@ export default function PostPage({ source, frontMatter }) {
       </main>
       <div className="flex justify-center mt-8">
         <CustomLink
-          as={`/tags/${(frontMatter.tags).toLowerCase()}`}
+          as={`/tags/${toBasicLatin(frontMatter.tags)}`}
           href={`/tags/[tag]`}
         >
-          <a className="bg-cyan-700 text-stone-200 px-4 py-2 rounded-full">{frontMatter.tags}</a>
+          <a className="bg-cyan-700 text-stone-200 px-6 py-2 rounded-full">
+            {frontMatter.tags}
+          </a>
         </CustomLink>
       </div>
     </>
@@ -92,3 +97,10 @@ export const getStaticPaths = async () => {
     fallback: false,
   };
 };
+
+function toBasicLatin(str) {
+  return str
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036F]/g, "");
+}

@@ -7,7 +7,13 @@ import Head from "next/head";
 import Image from "next/image";
 import path from "path";
 import CustomLink from "../../components/CustomLink";
-import { tagFilePaths, TAGS_PATH } from "../../utils/mdxUtils";
+import PostCard from "../../components/PostCard";
+import {
+  postFilePaths,
+  POSTS_PATH,
+  tagFilePaths,
+  TAGS_PATH,
+} from "../../utils/mdxUtils";
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -23,24 +29,40 @@ const components = {
   Head,
 };
 
-export default function TagPage({ source, frontMatter }) {
+export default function TagPage({ posts, frontMatter }) {
   return (
     <>
       <header>
-        <nav>
+        <nav className="pb-6">
           <CustomLink href="/">
-            <a className="link">⬅️ Domů</a>
+            <a className="link">➡️ Domů</a>
+          </CustomLink>
+          <CustomLink href="/posts">
+            <a className="link"> ➡️ Nejnovější příspěvky</a>
           </CustomLink>
           <CustomLink href="/tags">
-            <a className="link">⬅️ Kategorie</a>
+            <a className="link"> ➡️ Kategorie</a>
           </CustomLink>
         </nav>
       </header>
-      <div>
-        <h1>{frontMatter.title}</h1>
-      </div>
       <main>
-        <MDXRemote {...source} components={components} />
+        <h1 className="mb-6">{frontMatter.title}</h1>
+        <ul className="flex flex-wrap items-stretch justify-center gap-4">
+          {posts
+            .filter((post) => post.data.tags === frontMatter.title)
+            .sort((a, b) => {
+              if (a.data.date < b.data.date) {
+                return 1;
+              }
+              if (a.data.date > b.data.date) {
+                return -1;
+              }
+              return 0;
+            })
+            .map((post) => (
+              <PostCard post={post} key={post.filePath} />
+            ))}
+        </ul>
       </main>
     </>
   );
@@ -61,9 +83,20 @@ export const getStaticProps = async ({ params }) => {
     scope: data,
   });
 
+  const posts = postFilePaths.map((filePath) => {
+    const source = fs.readFileSync(path.join(POSTS_PATH, filePath));
+    const { content, data } = matter(source);
+
+    return {
+      content,
+      data,
+      filePath,
+    };
+  });
+
   return {
     props: {
-      source: mdxSource,
+      posts,
       frontMatter: data,
     },
   };

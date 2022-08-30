@@ -12,25 +12,26 @@ import {
 export default function Tags({ tags, posts }) {
   return (
     <>
-      <CustomLink href="/" className="block mb-6">
-        <a className="link">⬅️ Domů</a>
-      </CustomLink>
-      <ul>
+      <header>
+        <nav className="pb-6">
+          <CustomLink href="/">
+            <a className="link">➡️ Domů</a>
+          </CustomLink>
+          <CustomLink href="/posts">
+            <a className="link"> ➡️ Nejnovější příspěvky</a>
+          </CustomLink>
+        </nav>
+      </header>
+      <h1>Kategorie</h1>
+      <ul className="flex flex-wrap justify-center border p-32 gap-10">
         {tags.map((tag) => (
-          <li key={tag.filePath}>
-            <h2>{tag.data.title}</h2>
-            {posts
-              .filter((post) => post.data.tags === tag.data.title)
-              .map((post) => (
-                <li key={post.filePath}>
-                  <CustomLink
-                    as={`/posts/${post.filePath.replace(/\.mdx?$/, "")}`}
-                    href={`/posts/[slug]`}
-                  >
-                    <a>{post.data.title}</a>
-                  </CustomLink>
-                </li>
-              ))}
+          <li
+            key={tag.filePath}
+            className="flex flex-wrap justify-center items-stretch gap-4 border rounded-full px-6 py-2 bg-cyan-700 text-stone-200"
+          >
+            <CustomLink href={`/tags/${tag.data.slug}`}>
+              <a className="link text-2xl"> {tag.data.title}</a>
+            </CustomLink>
           </li>
         ))}
       </ul>
