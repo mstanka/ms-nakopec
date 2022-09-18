@@ -6,8 +6,9 @@ import { serialize } from "next-mdx-remote/serialize";
 import Head from "next/head";
 import Image from "next/image";
 import path from "path";
-import CustomLink from "../../components/CustomLink";
+import { CustomLink } from "../../components/CustomLink";
 import { postFilePaths, POSTS_PATH } from "../../utils/mdxUtils";
+import NavigationMenu from "../../components/NavigationMenu";
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -27,17 +28,7 @@ export default function PostPage({ source, frontMatter }) {
   return (
     <>
       <header>
-        <nav className="pb-6">
-          <CustomLink href="/">
-            <a className="link">➡️ Domů</a>
-          </CustomLink>
-          <CustomLink href="/posts">
-            <a className="link"> ➡️ Nejnovější příspěvky</a>
-          </CustomLink>
-          <CustomLink href="/tags">
-            <a className="link"> ➡️ Kategorie</a>
-          </CustomLink>
-        </nav>
+        <NavigationMenu />
       </header>
       <div>
         <h1>{frontMatter.title.substring(11)}</h1>

@@ -1,4 +1,4 @@
-import CustomLink from "./CustomLink";
+import { CustomLink } from "./CustomLink";
 import Image from "next/image";
 
 export default function PostCard({ post }) {

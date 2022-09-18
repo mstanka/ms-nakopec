@@ -2,14 +2,12 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <>
-      <h1 className="py-8 uppercase">Na kopec</h1>
+    <div className="mt-12">
       <p>
-        Děkuji, že jste našli cestu a přišli se podívat na můj kopec. Na
-        stránky, které vypráví můj příběh, proč jdu na kopec. Je to příběh o
-        tom, jak nacházím svoji cestu přes jednotlivé &#34;kopečky života&#34; a
-        jak hledám důvod, proč se pořád o něco snažím a k čemu je to vlastně
-        dobré.
+        Na kopec je blog, který vypráví můj příběh, proč jdu &#34;na kopec&#34;. Je to
+        příběh o tom, jak nacházím svoji cestu přes jednotlivé &#34;kopečky
+        života&#34; a jak hledám důvod, proč se pořád o něco snažím a k čemu je
+        to vlastně dobré.
       </p>
       <br />
       <Image
@@ -56,6 +54,6 @@ export default function Home() {
       <p>
         <i>A možná tu najdete inspiraci pro svoji vlastní cestu…</i>
       </p>
-    </>
+    </div>
   );
 }

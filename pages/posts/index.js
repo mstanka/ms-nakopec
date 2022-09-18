@@ -1,24 +1,17 @@
 import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
-import CustomLink from "../../components/CustomLink";
 import PostCard from "../../components/PostCard";
 import { postFilePaths, POSTS_PATH } from "../../utils/mdxUtils";
+import NavigationMenu from "../../components/NavigationMenu";
 
 export default function Posts({ posts }) {
   return (
     <>
       <header>
-        <nav className="pb-6">
-          <CustomLink href="/">
-            <a className="link">➡️ Domů</a>
-          </CustomLink>
-          <CustomLink href="/tags">
-            <a className="link"> ➡️ Kategorie</a>
-          </CustomLink>
-        </nav>
+        <NavigationMenu />
       </header>
-      <h1 className="mb-12">Nejnovější příspěvky</h1>
+      <h1 className="mb-12 mt-6">Nejnovější příspěvky</h1>
       <ul className="flex flex-wrap items-stretch justify-center gap-4">
         {posts
           .sort((a, b) => {
