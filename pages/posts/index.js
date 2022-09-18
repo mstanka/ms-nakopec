@@ -1,7 +1,7 @@
 import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
-import CustomLink from "../../components/CustomLink";
+import { CustomLink } from "../../components/CustomLink";
 import PostCard from "../../components/PostCard";
 import { postFilePaths, POSTS_PATH } from "../../utils/mdxUtils";
 

@@ -6,7 +6,7 @@ import { serialize } from "next-mdx-remote/serialize";
 import Head from "next/head";
 import Image from "next/image";
 import path from "path";
-import CustomLink from "../../components/CustomLink";
+import { CustomLink } from "../../components/CustomLink";
 import { postFilePaths, POSTS_PATH } from "../../utils/mdxUtils";
 
 // Custom components/renderers to pass to MDX.
