@@ -12,7 +12,7 @@ export default function Posts({ posts }) {
         <NavigationMenu />
       </header>
       <h1 className="mb-12 mt-6">Nejnovější příspěvky</h1>
-      <ul className="flex flex-wrap items-stretch justify-center gap-4">
+      <ul className="flex flex-wrap items-stretch justify-center md:justify-between gap-2 md:gap-4">
         {posts
           .sort((a, b) => {
             if (a.data.date < b.data.date) {

@@ -23,7 +23,7 @@ const menuItems = [
 
 export default function NavigationMenu() {
   return (
-    <Popover className="relative md:bg-stone-100">
+    <Popover className="relative md:border-b-2 border-stone-300">
       <div className="-my-2 mr-2 flex justify-end md:hidden">
         <Popover.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-700">
           <span className="sr-only">Open menu</span>
@@ -33,16 +33,16 @@ export default function NavigationMenu() {
       <div className="hidden md:flex items-center justify-between">
         <CustomLink
           href="/"
-          className="text-xl text-cyan-700 font-tillana tracking-wide px-5 p-7 uppercase hover:bg-gray-50"
+          className="text-xl text-cyan-700 font-tillana tracking-wide px-5 p-7 uppercase rounded hover:bg-stone-100"
         >
           Na kopec
         </CustomLink>
-        <div className="relative flex bg-stone-100 px-5 py-4 sm:gap-10 sm:p-4">
+        <div className="relative flex px-5 py-4 sm:gap-10 sm:p-4">
           {menuItems.map((item) => (
             <CustomLink
               key={item.name}
               href={item.href}
-              className="-m-3 flex items-center rounded-lg p-3 hover:bg-gray-50"
+              className="-m-3 flex items-center rounded-lg p-3 hover:bg-stone-100"
             >
               <item.icon
                 className="h-6 w-6 flex-shrink-0 text-cyan-700"
@@ -72,7 +72,7 @@ export default function NavigationMenu() {
           className="absolute inset-x-0 top-0 origin-top-right transform p-2 transition md:hidden"
         >
           <div className="rounded-lg bg-stone-100 shadow-lg ring-1 ring-black ring-opacity-5">
-            <div className="px-5 pt-5 pb-6 realative z-20">
+            <div className="px-5 pt-5 pb-12 realative z-20">
               <div className="flex justify-between items-center pb-6 ">
                 <CustomLink
                   href="/"
