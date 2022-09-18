@@ -1,18 +1,13 @@
-import Link from "next/link";
 import Home from "../components/Home";
+import NavigationMenu from "../components/NavigationMenu";
 
 export default function Index() {
   return (
     <main>
-      <Home />
       <div className="mt-6">
-        <Link href="/posts">
-          <a className="link">➡️ Nejnovější příspěvky </a>
-        </Link>
-        <Link href="/tags">
-          <a className="link"> ➡️ Kategorie</a>
-        </Link>
+        <NavigationMenu />
       </div>
+      <Home />
     </main>
   );
 }

@@ -8,21 +8,15 @@ import {
   tagFilePaths,
   TAGS_PATH,
 } from "../../utils/mdxUtils";
+import NavigationMenu from "../../components/NavigationMenu";
 
 export default function Tags({ tags, posts }) {
   return (
     <>
       <header>
-        <nav className="pb-6">
-          <CustomLink href="/">
-            <a className="link">➡️ Domů</a>
-          </CustomLink>
-          <CustomLink href="/posts">
-            <a className="link"> ➡️ Nejnovější příspěvky</a>
-          </CustomLink>
-        </nav>
+       <NavigationMenu />
       </header>
-      <h1>Kategorie</h1>
+      <h1 className="mt-6 mb-12">Kategorie</h1>
       <ul className="flex flex-wrap justify-center border p-32 gap-10">
         {tags.map((tag) => (
           <li
