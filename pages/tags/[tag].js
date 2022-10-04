@@ -89,14 +89,16 @@ export default function TagPage({ posts, frontMatter }) {
               <PostCard post={post} key={post.filePath} />
             ))}
         </ul>
-        <Pagination
-          totalPages={totalPages}
-          offset={offset}
-          toItem={toItem}
-          fromItem={fromItem}
-          handlePrevPage={handlePrev}
-          handleNextPage={handleNext}
-        />
+        {totalPages > offset && (
+          <Pagination
+            totalPages={totalPages}
+            offset={offset}
+            toItem={toItem}
+            fromItem={fromItem}
+            handlePrevPage={handlePrev}
+            handleNextPage={handleNext}
+          />
+        )}
       </main>
     </>
   );
