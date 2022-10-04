@@ -1,5 +1,6 @@
 import fs from "fs";
 import matter from "gray-matter";
+import { useState } from "react";
 import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 // import dynamic from "next/dynamic";
@@ -15,6 +16,7 @@ import {
   TAGS_PATH,
 } from "../../utils/mdxUtils";
 import NavigationMenu from "../../components/NavigationMenu";
+import Pagination from "../../components/Pagination";
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -31,6 +33,34 @@ const components = {
 };
 
 export default function TagPage({ posts, frontMatter }) {
+  const postsWithTag = posts.filter(
+    (post) => post.data.tags === frontMatter.title
+  );
+
+  const offset = 12;
+  const totalPages = postsWithTag.length;
+  const [fromItem, setFromItem] = useState(1);
+  const [toItem, setToItem] = useState(offset);
+
+  const handlePrev = () => {
+    if (toItem === totalPages && totalPages % fromItem !== 0) {
+      setFromItem(totalPages - (totalPages % fromItem) - offset);
+      setToItem(totalPages - (totalPages % fromItem) - 1);
+    } else {
+      setFromItem(fromItem - offset);
+      setToItem(toItem - offset);
+    }
+  };
+
+  const handleNext = () => {
+    setFromItem(fromItem + offset);
+    if (toItem + offset > totalPages) {
+      setToItem(totalPages);
+    } else {
+      setToItem(toItem + offset);
+    }
+  };
+
   return (
     <>
       <header>
@@ -39,8 +69,7 @@ export default function TagPage({ posts, frontMatter }) {
       <main>
         <h1 className="mb-12 mt-6">{frontMatter.title}</h1>
         <ul className="flex flex-wrap items-stretch justify-center gap-4">
-          {posts
-            .filter((post) => post.data.tags === frontMatter.title)
+          {postsWithTag
             .sort((a, b) => {
               if (a.data.date < b.data.date) {
                 return 1;
@@ -50,10 +79,24 @@ export default function TagPage({ posts, frontMatter }) {
               }
               return 0;
             })
+            .filter((post) => {
+              return (
+                postsWithTag.indexOf(post) + 1 >= fromItem &&
+                postsWithTag.indexOf(post) + 1 <= toItem
+              );
+            })
             .map((post) => (
               <PostCard post={post} key={post.filePath} />
             ))}
         </ul>
+        <Pagination
+          totalPages={totalPages}
+          offset={offset}
+          toItem={toItem}
+          fromItem={fromItem}
+          handlePrevPage={handlePrev}
+          handleNextPage={handleNext}
+        />
       </main>
     </>
   );
