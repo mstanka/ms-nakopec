@@ -27,7 +27,7 @@ const components = {
 export default function PostPage({ source, frontMatter }) {
   return (
     <>
-      <header>
+      <header className="sticky top-0 bg-inherit z-50">
         <NavigationMenu />
       </header>
       <div>

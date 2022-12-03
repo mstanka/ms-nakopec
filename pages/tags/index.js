@@ -13,7 +13,7 @@ import NavigationMenu from "../../components/NavigationMenu";
 export default function Tags({ tags, posts }) {
   return (
     <>
-      <header>
+      <header className="sticky top-0 bg-inherit z-50">
        <NavigationMenu />
       </header>
       <h1 className="mt-6 mb-12">Kategorie</h1>

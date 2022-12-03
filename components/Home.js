@@ -2,12 +2,13 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="mt-12">
+    <div className="mt-6">
+      <h1>Na kopec</h1>
       <p>
-        Na kopec je blog, který vypráví můj příběh, proč jdu &#34;na kopec&#34;. Je to
-        příběh o tom, jak nacházím svoji cestu přes jednotlivé &#34;kopečky
-        života&#34; a jak hledám důvod, proč se pořád o něco snažím a k čemu je
-        to vlastně dobré.
+        Na kopec je blog, který vypráví můj příběh, proč jdu &#34;na kopec&#34;.
+        Je to příběh o tom, jak nacházím svoji cestu přes jednotlivé
+        &#34;kopečky života&#34; a jak hledám důvod, proč se pořád o něco snažím
+        a k čemu je to vlastně dobré.
       </p>
       <br />
       <Image

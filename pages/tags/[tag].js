@@ -63,7 +63,7 @@ export default function TagPage({ posts, frontMatter }) {
 
   return (
     <>
-      <header>
+      <header className="sticky top-0 bg-inherit z-50">
         <NavigationMenu />
       </header>
       <main>

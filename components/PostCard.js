@@ -6,7 +6,7 @@ export default function PostCard({ post }) {
     <>
       <li
         key={post.filePath}
-        className="flex flex-col justify-between items-center text-center border border-stone-300 px-4 py-6 rounded-sm shadow-md  transition ease-in-out duration-500 hover:scale-105 hover:bg-stone-100"
+        className="flex flex-col justify-between items-center text-center bg-stone-200 border border-stone-300 px-4 py-6 rounded-sm shadow-md  transition ease-in-out duration-500 hover:scale-105 hover:bg-stone-100 relative z-0"
       >
         <div>
           <CustomLink

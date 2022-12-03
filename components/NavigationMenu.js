@@ -5,10 +5,16 @@ import {
   XMarkIcon,
   CalendarIcon,
   TagIcon,
+  PhotoIcon,
 } from "@heroicons/react/24/outline";
 import { CustomLink } from "./CustomLink";
 
 const menuItems = [
+  {
+    name: "Proč na kopec",
+    href: "/",
+    icon: PhotoIcon,
+  },
   {
     name: "Nejnovější příspěvky",
     href: "/posts",
@@ -30,19 +36,13 @@ export default function NavigationMenu() {
           <Bars3Icon className="h-6 w-6" aria-hidden="true" />
         </Popover.Button>
       </div>
-      <div className="hidden md:flex items-center justify-between">
-        <CustomLink
-          href="/"
-          className="text-xl text-cyan-700 font-tillana tracking-wide px-5 p-7 uppercase rounded hover:bg-stone-100"
-        >
-          Na kopec
-        </CustomLink>
-        <div className="relative flex px-5 py-4 sm:gap-10 sm:p-4">
+      <div className="hidden md:flex justify-center sticky top-0">
+        <div className="relative flex px-5 py-4 sm:gap-5 sm:p-2">
           {menuItems.map((item) => (
             <CustomLink
               key={item.name}
               href={item.href}
-              className="-m-3 flex items-center rounded-lg p-3 hover:bg-stone-100"
+              className=" flex items-center rounded-lg px-3 py-1 hover:bg-stone-100"
             >
               <item.icon
                 className="h-6 w-6 flex-shrink-0 text-cyan-700"
@@ -73,13 +73,7 @@ export default function NavigationMenu() {
         >
           <div className="rounded-lg bg-stone-100 shadow-lg ring-1 ring-black ring-opacity-5">
             <div className="px-5 pt-5 pb-12 realative z-20">
-              <div className="flex justify-between items-center pb-6 ">
-                <CustomLink
-                  href="/"
-                  className="text-xl text-cyan-700 font-tillana tracking-wide uppercase px-2 p-5 hover:bg-gray-50"
-                >
-                  Na kopec
-                </CustomLink>
+              <div className="flex justify-end">
                 <Popover.Button className="inline-flex items-center justify-center rounded-md bg-stone-100 p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-700">
                   <span className="sr-only">Close menu</span>
                   <XMarkIcon className="h-6 w-6" aria-hidden="true" />
@@ -91,7 +85,7 @@ export default function NavigationMenu() {
                     <a
                       key={item.name}
                       href={item.href}
-                      className="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50"
+                      className="-m-3 flex items-center rounded-md p-3 hover:bg-stone-50"
                     >
                       <item.icon
                         className="h-6 w-6 flex-shrink-0 text-cyan-700"

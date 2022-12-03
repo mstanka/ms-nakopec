@@ -4,9 +4,9 @@ import NavigationMenu from "../components/NavigationMenu";
 export default function Index() {
   return (
     <main>
-      <div className="mt-6">
+      <header className="sticky top-0 bg-stone-200 z-50">
         <NavigationMenu />
-      </div>
+      </header>
       <Home />
     </main>
   );
