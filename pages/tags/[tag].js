@@ -68,7 +68,7 @@ export default function TagPage({ posts, frontMatter }) {
       </header>
       <main>
         <h1 className="mb-12 mt-6">{frontMatter.title}</h1>
-        <ul className="flex flex-wrap items-stretch justify-center gap-4">
+        <ul className="grid gap-2 justify-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {postsWithTag
             .sort((a, b) => {
               if (a.data.date < b.data.date) {
