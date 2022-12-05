@@ -52,7 +52,7 @@ export default function Search({ posts }) {
           placeholder="Hledej název příspěvku..."
           type="text"
           value={query}
-          className="text-cyan-700 bg-stone-100 p-1 max-w-xs w-full rounded"
+          className="text-cyan-700 bg-stone-100 p-1 max-w-xs w-full rounded cursor-pointer"
         />
       </div>
 
