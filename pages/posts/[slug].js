@@ -31,7 +31,7 @@ export default function PostPage({ source, frontMatter }) {
         <NavigationMenu />
       </header>
       <div>
-        <h1>{frontMatter.title.substring(11)}</h1>
+        <h1 className="my-6">{frontMatter.title.substring(11)}</h1>
         <h3 className="text-center mb-10">
           <date>{frontMatter.date}</date>
         </h3>

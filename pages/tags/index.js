@@ -14,7 +14,7 @@ export default function Tags({ tags, posts }) {
   return (
     <>
       <header className="sticky top-0 bg-inherit z-50">
-       <NavigationMenu />
+        <NavigationMenu />
       </header>
       <h1 className="mt-6 mb-12">Kategorie</h1>
       <ul className="flex flex-wrap justify-center border p-32 gap-10">

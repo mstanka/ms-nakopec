@@ -9,13 +9,13 @@ export default function Pagination({
   handleNextPage,
 }) {
   return (
-    <div className="flex items-center justify-between bg-stone-200 text-gray-500 px-4 py-3 sm:px-0 mt-16">
+    <div className="flex items-center justify-between bg-stone-200 dark:bg-gray-800 text-gray-500 px-4 py-3 sm:px-0 mt-16">
       <div className="flex flex-1 justify-between sm:hidden">
         <button
           href="#"
           onClick={handlePrevPage}
           disabled={fromItem <= offset}
-          className="relative inline-flex items-center rounded-md border border-gray-300 bg-stone-200 px-4 py-2 text-sm font-medium hover:bg-gray-50 hover:disabled:bg-stone-200"
+          className="relative inline-flex items-center rounded-md border border-gray-300 bg-stone-200 dark:bg-gray-800 px-4 py-2 text-sm font-medium hover:bg-gray-50 hover:disabled:bg-stone-200 hover:disabled:dark:bg-gray-800 "
         >
           Předchozí
         </button>
@@ -23,7 +23,7 @@ export default function Pagination({
           href="#"
           onClick={handleNextPage}
           disabled={toItem >= totalPages - offset}
-          className="relative ml-3 inline-flex items-center rounded-md border border-gray-300 bg-stone-200 px-4 py-2 text-sm font-medium hover:bg-gray-50 hover:disabled:bg-stone-200"
+          className="relative ml-3 inline-flex items-center rounded-md border border-gray-300 bg-stone-200 dark:bg-gray-800 px-4 py-2 text-sm font-medium hover:bg-gray-50 hover:disabled:bg-stone-200 hover:disabled:dark:bg-gray-800 "
         >
           Následující
         </button>
@@ -45,7 +45,7 @@ export default function Pagination({
               href="#"
               onClick={handlePrevPage}
               disabled={fromItem <= offset}
-              className="relative inline-flex items-center rounded-l-md border border-gray-300 bg-stone-200 px-2 py-2 text-sm font-medium hover:bg-gray-50 hover:disabled:bg-stone-200 focus:z-20"
+              className="relative inline-flex items-center rounded-l-md border border-gray-300 bg-stone-200 dark:bg-gray-800 px-2 py-2 text-sm font-medium hover:bg-gray-50 hover:disabled:bg-stone-200 hover:disabled:dark:bg-gray-800  focus:z-20"
             >
               <ChevronLeftIcon className="h-5 w-5" aria-hidden="true" />
               <span>Předchozí</span>
@@ -54,7 +54,7 @@ export default function Pagination({
               href="#"
               onClick={handleNextPage}
               disabled={toItem >= totalPages}
-              className="relative inline-flex items-center rounded-r-md border border-gray-300 bg-stone-200 px-2 py-2 text-sm font-medium hover:bg-gray-50 hover:disabled:bg-stone-200 focus:z-20"
+              className="relative inline-flex items-center rounded-r-md border border-gray-300 bg-stone-200 dark:bg-gray-800 px-2 py-2 text-sm font-medium hover:bg-gray-50 hover:disabled:bg-stone-200 hover:disabled:dark:bg-gray-800 focus:z-20"
             >
               <span>Následující</span>
               <ChevronRightIcon className="h-5 w-5" aria-hidden="true" />

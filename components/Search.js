@@ -16,14 +16,10 @@ export default function Search({ posts }) {
     setQuery(event.target.value);
 
     if (query.length) {
-      console.log(searchEndpoint(query));
-
       fetch(searchEndpoint(query))
         .then((res) => res.json())
         .then((res) => {
-          console.log(res);
           setResults(res.results);
-          console.log(results);
         });
     } else {
       setResults([]);

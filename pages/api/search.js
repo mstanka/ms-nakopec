@@ -8,7 +8,6 @@ const posts =
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default (req, res) => {
-  console.log(req.query.q)
   const myQuery = req.query.q.toLowerCase();
   const results = myQuery
     ? posts.filter((post) => post.data.title.toLowerCase().includes(myQuery))
