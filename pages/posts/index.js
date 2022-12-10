@@ -5,7 +5,7 @@ import { getSortedPostsData } from "../../lib/posts";
 export default function Posts({ posts }) {
   return (
     <>
-      <header className="sticky top-0 bg-inherit z-50">
+      <header className="sticky top-0 bg-inherit z-50">    
         <NavigationMenu />
       </header>
       <h1 className="mb-12 mt-6">Nejnovější příspěvky</h1>

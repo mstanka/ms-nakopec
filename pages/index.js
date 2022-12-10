@@ -4,7 +4,7 @@ import NavigationMenu from "../components/NavigationMenu";
 export default function Index() {
   return (
     <main>
-      <header className="sticky top-0 bg-stone-200 z-50">
+      <header className="sticky top-0 bg-stone-200 dark:bg-gray-800 z-50">
         <NavigationMenu />
       </header>
       <Home />
