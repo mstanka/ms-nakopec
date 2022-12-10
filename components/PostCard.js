@@ -16,8 +16,8 @@ export default function PostCard({ post }) {
             <Image
               src={post.data.coverImage}
               alt={post.data.title}
-              width={310}
-              height={190}
+              width={415}
+              height={230}
               priority
               className="next-image"
             />
