@@ -5,6 +5,7 @@ import { ThemeProvider } from "next-themes";
 import { MDXProvider } from "@mdx-js/react";
 import Layout from "../components/Layout";
 import Footer from "../components/Footer";
+import CustomImage from "../components/CustomImage";
 import "../styles/globals.css";
 
 const ResponsiveImage = (props) => (
@@ -14,6 +15,7 @@ const ResponsiveImage = (props) => (
 const components = {
   Image: ResponsiveImage,
   CustomLink: Link,
+  CustomImage: CustomImage,
 };
 
 export default function MyApp({ Component, pageProps }) {

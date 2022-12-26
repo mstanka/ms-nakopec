@@ -9,6 +9,7 @@ import path from "path";
 import { CustomLink } from "../../components/CustomLink";
 import { postFilePaths, POSTS_PATH } from "../../utils/mdxUtils";
 import NavigationMenu from "../../components/NavigationMenu";
+import CustomImage from "../../components/CustomImage";
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -16,6 +17,7 @@ import NavigationMenu from "../../components/NavigationMenu";
 // here.
 const components = {
   a: CustomLink,
+  CustomImage,
   // It also works with dynamically-imported components, which is especially
   // useful for conditionally loading components for certain routes.
   // See the notes in README.md for more details.
@@ -33,7 +35,7 @@ export default function PostPage({ source, frontMatter }) {
       <div>
         <h1 className="my-6">{frontMatter.title.substring(11)}</h1>
         <h3 className="text-center mb-10">
-          <date>{frontMatter.date}</date>
+          <div>{frontMatter.date}</div>
         </h3>
       </div>
       <main>
@@ -44,9 +46,9 @@ export default function PostPage({ source, frontMatter }) {
           as={`/tags/${toBasicLatin(frontMatter.tags)}`}
           href={`/tags/[tag]`}
         >
-          <a className="bg-cyan-700 text-stone-200 px-6 py-2 rounded-full">
+          <span className="bg-cyan-700 text-stone-200 px-6 py-2 rounded-full">
             {frontMatter.tags}
-          </a>
+          </span>
         </CustomLink>
       </div>
     </>
