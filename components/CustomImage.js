@@ -3,13 +3,15 @@ import Image from "next/image";
 export default function CustomImage({ src, alt, size }) {
   if (size === "horizontalLarge") {
     return (
-      <Image
-        src={src}
-        alt={alt}
-        width={1376}
-        height={850}
-        className="next-image"
-      />
+      <div className="py-3">
+        <Image
+          src={src}
+          alt={alt}
+          width={1376}
+          height={850}
+          className="next-image"
+        />
+      </div>
     );
   }
 
