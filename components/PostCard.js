@@ -6,7 +6,7 @@ export default function PostCard({ post }) {
     <>
       <li
         key={post.filePath}
-        className="flex flex-col justify-between items-center text-center bg-stone-200 border border-stone-300 px-4 py-6 rounded-sm shadow-md transition ease-in-out duration-500 hover:scale-95 hover:bg-stone-100 relative z-0"
+        className="flex md:flex-col justify-between items-center text-center bg-stone-200 border border-stone-300 px-4 py-6 rounded-sm shadow-md transition ease-in-out duration-500 hover:scale-95 hover:bg-stone-100 relative z-0"
       >
         <div>
           <CustomLink
@@ -23,7 +23,7 @@ export default function PostCard({ post }) {
             />
           </CustomLink>
         </div>
-        <div className="py-6 text-center">
+        <div className="py-6 px-2 text-center">
           <CustomLink
             as={`/posts/${post.filePath.replace(/\.mdx?$/, "")}`}
             href={`/posts/[slug]`}
@@ -31,10 +31,10 @@ export default function PostCard({ post }) {
             <h2 className="w-52 m-auto">{post.data.title.substring(11)}</h2>
             <small className="text-stone-500">{post.data.date}</small>
           </CustomLink>
-        </div>
-        <div className="border border-stone-300 text-stone-500 px-6 py-1 rounded-full">
-          {" "}
-          {post.data.tags}
+          <div className="border border-stone-300 text-stone-500 mt-1 rounded-full">
+            {" "}
+            {post.data.tags}
+          </div>
         </div>
       </li>
     </>

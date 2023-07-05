@@ -12,7 +12,7 @@ import ThemeSwitch from "./ThemeSwitch";
 
 const menuItems = [
   {
-    name: "Proč na kopec",
+    name: "Na kopec",
     href: "/",
     icon: PhotoIcon,
   },

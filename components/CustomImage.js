@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function CustomImage({ src, alt, size }) {
   if (size === "horizontalLarge") {
     return (
-      <div className="py-3">
+      <div className="py-1">
         <Image
           src={src}
           alt={alt}
