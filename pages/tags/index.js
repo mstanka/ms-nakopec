@@ -21,7 +21,7 @@ export default function Tags({ tags, posts }) {
         {tags.map((tag) => (
           <li
             key={tag.filePath}
-            className="flex flex-wrap justify-center items-stretch gap-4 border rounded-full px-6 py-2 bg-cyan-700 text-stone-200"
+            className="flex flex-wrap justify-center items-stretch gap-4 border rounded-lg px-6 py-2 bg-cyan-700 text-stone-200"
           >
             <CustomLink href={`/tags/${tag.data.slug}`}>
               <a className="link text-2xl"> {tag.data.title}</a>

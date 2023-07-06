@@ -46,7 +46,7 @@ export default function PostPage({ source, frontMatter }) {
           as={`/tags/${toBasicLatin(frontMatter.tags)}`}
           href={`/tags/[tag]`}
         >
-          <span className="bg-cyan-700 text-stone-200 px-6 py-2 rounded-full">
+          <span className="bg-cyan-700 text-stone-200 px-6 py-2 rounded-lg">
             {frontMatter.tags}
           </span>
         </CustomLink>
