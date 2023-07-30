@@ -21,8 +21,8 @@ export default function Footer() {
               gradientTransform="matrix(40 0 0 -39.7778 11115.001 16212.334)"
               gradientUnits="userSpaceOnUse"
             >
-              <stop offset="0" stopColor="#0062e0" />
-              <stop offset="1" stopColor="#19afff" />
+              <stop offset="0" stopColor="#57534e" />
+              <stop offset="1" stopColor="#57534e"/>
             </linearGradient>
             <path
               fill="url(#a)"
