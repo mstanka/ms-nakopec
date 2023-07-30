@@ -42,6 +42,11 @@ export default function PostPage({ source, frontMatter }) {
         <MDXRemote {...source} components={components} />
       </main>
       <div className="flex justify-center mt-8">
+        <CustomLink as={`/posts`} href={`/posts`}>
+          <span className="bg-cyan-700 text-stone-200 px-6 py-2 rounded-lg mr-2">
+            Nejnovější příspěvky
+          </span>
+        </CustomLink>
         <CustomLink
           as={`/tags/${toBasicLatin(frontMatter.tags)}`}
           href={`/tags/[tag]`}

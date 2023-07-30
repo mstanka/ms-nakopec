@@ -4,7 +4,7 @@
 
 @layer base {
   h1 {
-    @apply text-5xl text-cyan-700 dark:text-cyan-500 text-center font-tillana tracking-wide pt-10 pb-4;
+    @apply text-5xl text-cyan-700 dark:text-cyan-500 text-center font-nunito  pt-10 pb-4;
   }
   h2 {
     @apply text-xl text-cyan-700 dark:text-cyan-500;

@@ -6,11 +6,12 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        kumbh: ["Kumbh Sans", "sans-serif"],
-        tillana: ["Tillana, cursive"]
+        // kumbh: ["Kumbh Sans", "sans-serif"],
+        // tillana: ["Tillana, cursive"],
+        nunito: ["Nunito", "sans-serif"],
       },
     },
   },
-  darkMode: 'class',
+  darkMode: "class",
   plugins: [],
-}
+};
