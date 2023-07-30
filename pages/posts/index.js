@@ -1,11 +1,11 @@
 import { useState } from "react";
 import NavigationMenu from "../../components/NavigationMenu";
 import Search from "../../components/Search";
-import { CustomLink } from "../../components/CustomLink";
+// import { CustomLink } from "../../components/CustomLink";
 import { getSortedPostsData } from "../../lib/posts";
 
 export default function Posts({ posts }) {
-  const [sliceValues, setSliceValues] = useState([0, 6]);
+  const [sliceValues, setSliceValues] = useState([0, 8]);
 
   return (
     <>
@@ -17,7 +17,7 @@ export default function Posts({ posts }) {
       <Search posts={posts.slice(sliceValues[0], sliceValues[1])} />
 
       <div className="flex justify-center my-5">
-        <button onClick={() => setSliceValues([0, sliceValues[1] + 6])}>
+        <button onClick={() => setSliceValues([0, sliceValues[1] + 8])}>
           Načíst další příspěvky
         </button>
       </div>
