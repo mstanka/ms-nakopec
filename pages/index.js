@@ -1,5 +1,6 @@
 import Home from "../components/Home";
 import NavigationMenu from "../components/NavigationMenu";
+import { CustomLink } from "../components/CustomLink";
 
 export default function Index() {
   return (
@@ -8,6 +9,12 @@ export default function Index() {
         <NavigationMenu />
       </header>
       <Home />
+      <CustomLink as={`/posts`} href={`/posts`}>
+        <button>Nejnovější příspěvky</button>
+      </CustomLink>
+      <CustomLink as={`/tags`} href={`/tags`}>
+        <button>Kategorie</button>
+      </CustomLink>
     </main>
   );
 }

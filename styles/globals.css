@@ -7,9 +7,12 @@
     @apply text-5xl text-cyan-700 dark:text-cyan-500 text-center font-nunito  pt-10 pb-4;
   }
   h2 {
-    @apply text-xl text-cyan-700 dark:text-cyan-500;
+    @apply text-2xl text-cyan-700 dark:text-cyan-500;
   }
   h3 {
+    @apply text-xl text-cyan-800 dark:text-cyan-500;
+  }
+  h4 {
     @apply text-sm text-cyan-800 dark:text-cyan-500;
   }
   p {

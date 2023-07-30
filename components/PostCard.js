@@ -28,7 +28,7 @@ export default function PostCard({ post }) {
             as={`/posts/${post.filePath.replace(/\.mdx?$/, "")}`}
             href={`/posts/[slug]`}
           >
-            <h2 className="w-52 m-auto">{post.data.title.substring(11)}</h2>
+            <h3 className="w-52 m-auto">{post.data.title.substring(11)}</h3>
             <small className="text-stone-500">{post.data.date}</small>
           </CustomLink>
           <div className="border border-stone-300 text-stone-500 mt-1 rounded-lg">
