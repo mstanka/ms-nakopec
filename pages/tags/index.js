@@ -17,7 +17,7 @@ export default function Tags({ tags, posts }) {
         <NavigationMenu />
       </header>
       <h1 className="mt-6 mb-12">Kategorie</h1>
-      <ul className="flex flex-wrap justify-center border p-20 gap-10">
+      <ul className="flex flex-wrap justify-center p-20 gap-10">
         {tags.map((tag) => (
           <li
             key={tag.filePath}
