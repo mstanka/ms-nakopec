@@ -1,7 +1,6 @@
 import { useState } from "react";
 import NavigationMenu from "../../components/NavigationMenu";
 import Search from "../../components/Search";
-// import { CustomLink } from "../../components/CustomLink";
 import { getSortedPostsData } from "../../lib/posts";
 
 export default function Posts({ posts }) {
@@ -21,22 +20,6 @@ export default function Posts({ posts }) {
           Načíst další příspěvky
         </button>
       </div>
-
-      {/* <div>
-        <h2 className="text-center text-4xl py-5">Proč na kopec</h2>
-
-        <p>
-          Na kopec je blog, který vypráví můj příběh, proč jdu &#34;na
-          kopec&#34;. Je to příběh o tom, jak nacházím svoji cestu přes
-          jednotlivé &#34;kopečky života&#34; a jak hledám důvod, proč se pořád
-          o něco snažím a k čemu je to vlastně dobré....{" "}
-          <CustomLink as={"/"} href={"/"}>
-            <button>
-              <small>Číst dál </small>
-            </button>
-          </CustomLink>
-        </p>
-      </div> */}
     </>
   );
 }

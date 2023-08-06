@@ -6,13 +6,14 @@ import {
   CalendarIcon,
   TagIcon,
   PhotoIcon,
+  QuestionMarkCircleIcon,
 } from "@heroicons/react/24/outline";
 import { CustomLink } from "./CustomLink";
 import ThemeSwitch from "./ThemeSwitch";
 
 const menuItems = [
   {
-    name: "Proč na kopec",
+    name: "Na kopec",
     href: "/",
     icon: PhotoIcon,
   },
@@ -25,6 +26,11 @@ const menuItems = [
     name: "Kategorie",
     href: "/tags",
     icon: TagIcon,
+  },
+  {
+    name: "Proč na kopec",
+    href: "/about",
+    icon: QuestionMarkCircleIcon,
   },
 ];
 
@@ -39,7 +45,7 @@ export default function NavigationMenu() {
         </Popover.Button>
       </div>
       <div className="hidden md:flex justify-between items-center sticky top-0">
-        <div className="relative flex  px-5 py-4 sm:gap-5 sm:p-2">
+        <div className="relative flex  px-5 py-4  sm:p-1">
           {menuItems.map((item) => (
             <CustomLink
               key={item.name}
