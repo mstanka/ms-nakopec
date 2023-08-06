@@ -3,13 +3,13 @@ import Image from "next/image";
 import NavigationMenu from "../components/NavigationMenu";
 import { CustomLink } from "../components/CustomLink";
 import Search from "../components/Search";
-import { getSortedPostsData } from "../lib/posts";
+import { getFavoritePostsData, getSortedPostsData } from "../lib/posts";
 import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
 import { tagFilePaths, TAGS_PATH } from "../utils/mdxUtils";
 
-export default function Index({ posts, tags }) {
+export default function Index({ posts, favoritePosts, tags }) {
   const [sliceValues, setSliceValues] = useState([0, 8]);
   return (
     <main>
@@ -40,14 +40,14 @@ export default function Index({ posts, tags }) {
         />
       </div>
 
-      <h2 className="mb-8 mt-32 text-center">Nejnovější příspěvky</h2>
-      <Search posts={posts.slice(sliceValues[0], sliceValues[1])} />
-
-      <div className="text-center text-sm my-5">
-        <button onClick={() => setSliceValues([0, sliceValues[1] + 8])}>
-          Načíst další příspěvky
-        </button>
-      </div>
+      <h2 className="mb-6 mt-28 text-center">Oblíbené příspěvky</h2>
+      <p className="mb-3">
+        Výběr několika mých oblíbených příspěvků. Většinou se jedná o velmi
+        zajímavá místa, která se dobře fotí. Ale někdy se může jednat o místa,
+        která nejsou ničím výjimečná, ale váže se k nim silný zážitek. A někdy
+        oboje zároveň :){" "}
+      </p>
+      <Search posts={favoritePosts} />
 
       <h2 className="mb-8 mt-32 text-center">Kategorie</h2>
       <ul className="flex flex-wrap justify-center p-5 gap-5">
@@ -62,12 +62,25 @@ export default function Index({ posts, tags }) {
           </li>
         ))}
       </ul>
+
+      <h2 className="mb-8 mt-32 text-center">Nejnovější příspěvky</h2>
+      <Search
+        posts={posts.slice(sliceValues[0], sliceValues[1])}
+        isSearchable={true}
+      />
+
+      <div className="text-center text-sm my-5">
+        <button onClick={() => setSliceValues([0, sliceValues[1] + 8])}>
+          Načíst další příspěvky
+        </button>
+      </div>
     </main>
   );
 }
 
 export function getStaticProps() {
   const posts = getSortedPostsData();
+  const favoritePosts = getFavoritePostsData();
 
   const tags = tagFilePaths.map((filePath) => {
     const source = fs.readFileSync(path.join(TAGS_PATH, filePath));
@@ -80,5 +93,5 @@ export function getStaticProps() {
     };
   });
 
-  return { props: { posts, tags } };
+  return { props: { posts, favoritePosts, tags } };
 }

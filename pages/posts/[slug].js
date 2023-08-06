@@ -10,6 +10,7 @@ import { CustomLink } from "../../components/CustomLink";
 import { postFilePaths, POSTS_PATH } from "../../utils/mdxUtils";
 import NavigationMenu from "../../components/NavigationMenu";
 import CustomImage from "../../components/CustomImage";
+import { StarIcon } from "@heroicons/react/24/solid";
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -32,7 +33,10 @@ export default function PostPage({ source, frontMatter }) {
       <header className="sticky top-0 bg-inherit z-50">
         <NavigationMenu />
       </header>
-      <div>
+      <div className="relative">
+        {frontMatter.favorite && (
+          <StarIcon className="h-6 w-6 text-amber-400 absolute top-2 left-2" />
+        )}
         <h1 className="my-6">{frontMatter.title.substring(11)}</h1>
         <h3 className="text-center mb-10">
           <div>{frontMatter.date}</div>

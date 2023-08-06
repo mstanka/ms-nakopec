@@ -2,7 +2,7 @@ import { useCallback, useRef, useState } from "react";
 import PostCard from "./PostCard";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 
-export default function Search({ posts }) {
+export default function Search({ posts, isSearchable }) {
   const searchRef = useRef(null);
 
   const [query, setQuery] = useState("");
@@ -40,17 +40,19 @@ export default function Search({ posts }) {
 
   return (
     <div ref={searchRef}>
-      <div className="flex items-center justify-center mb-10">
-        <MagnifyingGlassIcon className="h-6 w-6 text-cyan-700 mr-2" />
-        <input
-          onChange={onChange}
-          onFocus={onFocus}
-          placeholder="Hledej název příspěvku..."
-          type="text"
-          value={query}
-          className="text-cyan-700 bg-stone-100 p-1 max-w-xs w-full rounded cursor-pointer px-2"
-        />
-      </div>
+      {isSearchable && (
+        <div className="flex items-center justify-center mb-10">
+          <MagnifyingGlassIcon className="h-6 w-6 text-cyan-700 mr-2" />
+          <input
+            onChange={onChange}
+            onFocus={onFocus}
+            placeholder="Hledej název příspěvku..."
+            type="text"
+            value={query}
+            className="text-cyan-700 bg-stone-100 p-1 max-w-xs w-full rounded cursor-pointer px-2"
+          />
+        </div>
+      )}
 
       {query.length === 0 && (
         <ul className="grid gap-2 justify-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
@@ -69,7 +71,9 @@ export default function Search({ posts }) {
       )}
 
       {query.length > 0 && results.length === 0 && (
-        <p className="text-center text-stone-500">Příspěvek s tímto názvem nebyl nalezen :( </p>
+        <p className="text-center text-stone-500">
+          Příspěvek s tímto názvem nebyl nalezen :({" "}
+        </p>
       )}
     </div>
   );
