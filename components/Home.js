@@ -60,8 +60,16 @@ export default function Home() {
         </p>
       </div>
 
-      <Link href={`/posts`}>Nejnovější příspěvky</Link>
-      <Link href={`/tags`}>Kategorie</Link>
+      <Link href={`/posts`} passHref>
+        <span className="bg-cyan-700 text-stone-200 px-6 py-2 rounded-lg mr-2">
+          Nejnovější příspěvky
+        </span>
+      </Link>
+      <Link href={`/tags`} passHref>
+        <span className="bg-cyan-700 text-stone-200 px-6 py-2 rounded-lg mr-2">
+          Kategorie
+        </span>
+      </Link>
     </>
   );
 }

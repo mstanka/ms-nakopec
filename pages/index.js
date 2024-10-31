@@ -22,13 +22,13 @@ export default function Index({ posts, favoritePosts, tags }) {
           Na kopec je blog, který vypráví můj příběh, proč jdu &#34;na
           kopec&#34;. Je to příběh o tom, jak nacházím svoji cestu přes
           jednotlivé &#34;kopečky života&#34; a jak hledám důvod, proč se pořád
-          o něco snažím a k čemu je to vlastně dobré.
-        </p>
-        <div className="text-center">
-          <Link as={`/about`} href={`/about`} className="link text-sm">
-            Číst dál
+          o něco snažím a k čemu je to vlastně dobré...
+          <Link as={`/about`} href={`/about`} passHref>
+            <span className="text-sm text-stone-500 border border-stone-300 px-4 py-1 rounded-lg ms-2">
+              číst dál
+            </span>
           </Link>
-        </div>
+        </p>
         <br />
         <Image
           src="/images/general/rohace.jpg"
