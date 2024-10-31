@@ -1,5 +1,11 @@
 import { Fragment } from "react";
-import { Popover, Transition } from "@headlessui/react";
+import Link from "next/link";
+import {
+  Popover,
+  PopoverButton,
+  PopoverPanel,
+  Transition,
+} from "@headlessui/react";
 import {
   Bars3Icon,
   XMarkIcon,
@@ -8,7 +14,6 @@ import {
   PhotoIcon,
   QuestionMarkCircleIcon,
 } from "@heroicons/react/24/outline";
-import { CustomLink } from "./CustomLink";
 import ThemeSwitch from "./ThemeSwitch";
 
 const menuItems = [
@@ -39,18 +44,19 @@ export default function NavigationMenu() {
     <Popover className="relative md:border-b-2 border-stone-300">
       <div className="-my-2 mr-2 flex justify-between items-center md:hidden">
         <ThemeSwitch />
-        <Popover.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-700 focus:dark:text-cyan-500">
+        <PopoverButton className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-700 focus:dark:text-cyan-500">
           <span className="sr-only">Open menu</span>
           <Bars3Icon className="h-6 w-6" aria-hidden="true" />
-        </Popover.Button>
+        </PopoverButton>
       </div>
       <div className="hidden md:flex justify-between items-center sticky top-0">
         <div className="relative flex  px-5 py-4  sm:p-1">
           {menuItems.map((item) => (
-            <CustomLink
+            <Link
               key={item.name}
               href={item.href}
               className="flex items-center rounded-lg px-3 py-1 hover:bg-stone-100"
+              passHref
             >
               <item.icon
                 className="h-6 w-6 flex-shrink-0 text-cyan-700 dark:text-cyan-500"
@@ -61,7 +67,7 @@ export default function NavigationMenu() {
                   {item.name}
                 </p>
               </div>
-            </CustomLink>
+            </Link>
           ))}
         </div>
         <ThemeSwitch />
@@ -76,17 +82,17 @@ export default function NavigationMenu() {
         leaveFrom="opacity-100 scale-100"
         leaveTo="opacity-0 scale-95"
       >
-        <Popover.Panel
+        <PopoverPanel
           focus
           className="absolute inset-x-0 top-0 origin-top-right transform p-2 transition md:hidden"
         >
           <div className="rounded-lg bg-stone-100  dark:bg-gray-800 shadow-lg ring-1 ring-black ring-opacity-5">
             <div className="px-5 pt-5 pb-12 realative z-20">
               <div className="flex justify-end">
-                <Popover.Button className="inline-flex items-center justify-center rounded-md bg-stone-100 dark:bg-gray-800 p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-700 focus:dark:text-cyan-500">
+                <PopoverButton className="inline-flex items-center justify-center rounded-md bg-stone-100 dark:bg-gray-800 p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-700 focus:dark:text-cyan-500">
                   <span className="sr-only">Close menu</span>
                   <XMarkIcon className="h-6 w-6" aria-hidden="true" />
-                </Popover.Button>
+                </PopoverButton>
               </div>
               <div className="mt-6">
                 <nav className="grid gap-y-8">
@@ -109,7 +115,7 @@ export default function NavigationMenu() {
               </div>
             </div>
           </div>
-        </Popover.Panel>
+        </PopoverPanel>
       </Transition>
     </Popover>
   );

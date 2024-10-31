@@ -14,7 +14,6 @@ const ResponsiveImage = (props) => (
 
 const components = {
   Image: ResponsiveImage,
-  CustomLink: Link,
   CustomImage: CustomImage,
 };
 

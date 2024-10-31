@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { CustomLink } from "./CustomLink";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -60,12 +60,8 @@ export default function Home() {
         </p>
       </div>
 
-      <CustomLink as={`/posts`} href={`/posts`}>
-        <button>Nejnovější příspěvky</button>
-      </CustomLink>
-      <CustomLink as={`/tags`} href={`/tags`}>
-        <button>Kategorie</button>
-      </CustomLink>
+      <Link href={`/posts`}>Nejnovější příspěvky</Link>
+      <Link href={`/tags`}>Kategorie</Link>
     </>
   );
 }

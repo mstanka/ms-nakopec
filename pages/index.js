@@ -1,7 +1,7 @@
 import { useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import NavigationMenu from "../components/NavigationMenu";
-import { CustomLink } from "../components/CustomLink";
 import Search from "../components/Search";
 import { getFavoritePostsData, getSortedPostsData } from "../lib/posts";
 import fs from "fs";
@@ -25,9 +25,9 @@ export default function Index({ posts, favoritePosts, tags }) {
           o něco snažím a k čemu je to vlastně dobré.
         </p>
         <div className="text-center">
-          <CustomLink as={`/about`} href={`/about`}>
-            <button className="link text-sm">Číst dál</button>
-          </CustomLink>
+          <Link as={`/about`} href={`/about`} className="link text-sm">
+            Číst dál
+          </Link>
         </div>
         <br />
         <Image
@@ -56,9 +56,9 @@ export default function Index({ posts, favoritePosts, tags }) {
             key={tag.filePath}
             className="flex flex-wrap justify-center items-stretch gap-4 border rounded-lg px-6 py-2 bg-cyan-700 text-stone-200"
           >
-            <CustomLink href={`/tags/${tag.data.slug}`}>
-              <a className="link text-xl"> {tag.data.title}</a>
-            </CustomLink>
+            <Link href={`/tags/${tag.data.slug}`} className="link text-xl">
+              {tag.data.title}
+            </Link>
           </li>
         ))}
       </ul>

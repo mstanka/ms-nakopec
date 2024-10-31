@@ -4,9 +4,9 @@ import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 // import dynamic from "next/dynamic";
 import Head from "next/head";
+import Link from "next/link";
 import Image from "next/image";
 import path from "path";
-import { CustomLink } from "../../components/CustomLink";
 import { postFilePaths, POSTS_PATH } from "../../utils/mdxUtils";
 import NavigationMenu from "../../components/NavigationMenu";
 import CustomImage from "../../components/CustomImage";
@@ -17,7 +17,6 @@ import { StarIcon } from "@heroicons/react/24/solid";
 // to handle import statements. Instead, you must include components in scope
 // here.
 const components = {
-  a: CustomLink,
   CustomImage,
   // It also works with dynamically-imported components, which is especially
   // useful for conditionally loading components for certain routes.
@@ -46,19 +45,20 @@ export default function PostPage({ source, frontMatter }) {
         <MDXRemote {...source} components={components} />
       </main>
       <div className="flex justify-center mt-8">
-        <CustomLink as={`/posts`} href={`/posts`}>
+        <Link as={`/posts`} href={`/posts`} passHref>
           <span className="bg-cyan-700 text-stone-200 px-6 py-2 rounded-lg mr-2">
             Nejnovější příspěvky
           </span>
-        </CustomLink>
-        <CustomLink
+        </Link>
+        <Link
           as={`/tags/${toBasicLatin(frontMatter.tags)}`}
           href={`/tags/[tag]`}
+          passHref
         >
           <span className="bg-cyan-700 text-stone-200 px-6 py-2 rounded-lg">
             {frontMatter.tags}
           </span>
-        </CustomLink>
+        </Link>
       </div>
     </>
   );
