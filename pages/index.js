@@ -42,14 +42,14 @@ export default function Index({ posts, favoritePosts, tags }) {
 
       <h2 className="mb-6 mt-28 text-center">Oblíbené příspěvky</h2>
       <p className="mb-3">
-        Výběr několika mých oblíbených příspěvků. Většinou se jedná o velmi
-        zajímavá místa, která se dobře fotí. Ale někdy se může jednat o místa,
-        která nejsou ničím výjimečná, ale váže se k nim silný zážitek. A někdy
-        oboje zároveň :){" "}
+        Zde naleznete výběr mých oblíbených příspěvků. Většinou zobrazují velmi
+        zajímavá místa, která vypadají skvěle na fotkách. Někdy však zachycuji i
+        místa, která nejsou na první pohled ničím zvláštní, ale mám na ně silné
+        vzpomínky. A někdy je to kombinace obojího.
       </p>
       <Search posts={favoritePosts} />
 
-      <h2 className="mb-8 mt-32 text-center">Kategorie</h2>
+      <h2 className="mb-8 mt-40 text-center">Kategorie</h2>
       <ul className="flex flex-wrap justify-center p-5 gap-5">
         {tags.map((tag) => (
           <li
@@ -63,7 +63,7 @@ export default function Index({ posts, favoritePosts, tags }) {
         ))}
       </ul>
 
-      <h2 className="mb-8 mt-32 text-center">Nejnovější příspěvky</h2>
+      <h2 className="mb-8 mt-40 text-center">Nejnovější příspěvky</h2>
       <Search
         posts={posts.slice(sliceValues[0], sliceValues[1])}
         isSearchable={true}

@@ -13,15 +13,6 @@ export default function Home() {
           o něco snažím a k čemu je to vlastně dobré.
         </p>
         <br />
-        <Image
-          src="/images/general/rohace.jpg"
-          alt="Na kopec"
-          width={1280}
-          height={390}
-          priority
-          className="next-image"
-        />
-        <br />
         <blockquote>
           Intuitivně cítím, že na ten kopec musím jít. Je něco ve mně, co mně
           nutí vylézt nahoru. Překonat tuhle překážku a posunout se zase o
@@ -30,6 +21,15 @@ export default function Home() {
           zase se zvednout. Klást si otázky a nalézat na ně odpovědi.
           Nepřestávat se snažit být v životě šťastnější a spokojenější...
         </blockquote>
+        <br />
+        <Image
+          src="/images/general/rohace.jpg"
+          alt="Na kopec"
+          width={1280}
+          height={390}
+          priority
+          className="next-image"
+        />
         <br />
         <p>
           Začala jsem psát tenhle blog v době, kdy se mi hromadily fotky a
