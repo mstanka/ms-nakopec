@@ -42,10 +42,10 @@ export default function Index({ posts, favoritePosts, tags }) {
 
       <h2 className="mb-6 mt-28 text-center">Oblíbené příspěvky</h2>
       <p className="mb-3">
-        Zde naleznete výběr mých oblíbených příspěvků. Většinou zobrazují velmi
-        zajímavá místa, která vypadají skvěle na fotkách. Někdy však zachycuji i
+        Zde najdete výběr mých oblíbených příspěvků. Ve většině případů se jedná o
+        zajímavá fotogenická místa, která jsem na své cestě potkala. Někdy však zachycují i
         místa, která nejsou na první pohled ničím zvláštní, ale mám na ně silné
-        vzpomínky. A někdy je to kombinace obojího.
+        vzpomínky. A někdy je to kombinace obojího...
       </p>
       <Search posts={favoritePosts} />
 
