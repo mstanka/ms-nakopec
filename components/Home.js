@@ -12,7 +12,6 @@ export default function Home() {
           jednotlivé &#34;kopečky života&#34; a jak hledám důvod, proč se pořád
           o něco snažím a k čemu je to vlastně dobré.
         </p>
-        <br />
         <blockquote>
           Intuitivně cítím, že na ten kopec musím jít. Je něco ve mně, co mně
           nutí vylézt nahoru. Překonat tuhle překážku a posunout se zase o
