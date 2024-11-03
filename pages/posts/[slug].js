@@ -11,6 +11,8 @@ import { postFilePaths, POSTS_PATH } from "../../utils/mdxUtils";
 import NavigationMenu from "../../components/NavigationMenu";
 import CustomImage from "../../components/CustomImage";
 import { StarIcon } from "@heroicons/react/24/solid";
+import LayoutGrid3Col from "../../components/LayoutGrid3Col";
+import LayoutGrid2Col from "../../components/LayoutGrid2Col";
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -18,6 +20,8 @@ import { StarIcon } from "@heroicons/react/24/solid";
 // here.
 const components = {
   CustomImage,
+  LayoutGrid2Col,
+  LayoutGrid3Col,
   // It also works with dynamically-imported components, which is especially
   // useful for conditionally loading components for certain routes.
   // See the notes in README.md for more details.
