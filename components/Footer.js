@@ -5,35 +5,48 @@ export default function Footer() {
         <div className="py-4">
           &copy; 2015 - {new Date().getFullYear()} Markéta Staňková
         </div>
-        <a
-          href="https://www.facebook.com/uphillhiking.cz"
-          target="_blank"
-          rel="noreferrer"
-          className="flex justify-center"
-        >
-          <svg className="w-10 h-10">
-            <linearGradient
-              id="a"
-              x1="-277.375"
-              x2="-277.375"
-              y1="406.6018"
-              y2="407.5726"
-              gradientTransform="matrix(40 0 0 -39.7778 11115.001 16212.334)"
-              gradientUnits="userSpaceOnUse"
+        <div className="flex justify-center gap-2">
+          <a
+            href="https://www.facebook.com/uphillhiking.cz"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <svg
+              height="30px"
+              width="30px"
+              viewBox="0 0 408.788 408.788"
+              fill="#57534e"
+              stroke="#000000"
             >
-              <stop offset="0" stopColor="#57534e" />
-              <stop offset="1" stopColor="#57534e"/>
-            </linearGradient>
-            <path
-              fill="url(#a)"
-              d="M16.7 39.8C7.2 38.1 0 29.9 0 20 0 9 9 0 20 0s20 9 20 20c0 9.9-7.2 18.1-16.7 19.8l-1.1-.9h-4.4l-1.1.9z"
-            />
-            <path
-              fill="#fff"
-              d="m27.8 25.6.9-5.6h-5.3v-3.9c0-1.6.6-2.8 3-2.8H29V8.2c-1.4-.2-3-.4-4.4-.4-4.6 0-7.8 2.8-7.8 7.8V20h-5v5.6h5v14.1c1.1.2 2.2.3 3.3.3 1.1 0 2.2-.1 3.3-.3V25.6h4.4z"
-            />
-          </svg>
-        </a>
+              <g stroke-width="0"></g>
+              <g stroke-linecap="round" stroke-linejoin="round"></g>
+              <g>
+                <path d="M353.701,0H55.087C24.665,0,0.002,24.662,0.002,55.085v298.616c0,30.423,24.662,55.085,55.085,55.085 h147.275l0.251-146.078h-37.951c-4.932,0-8.935-3.988-8.954-8.92l-0.182-47.087c-0.019-4.959,3.996-8.989,8.955-8.989h37.882 v-45.498c0-52.8,32.247-81.55,79.348-81.55h38.65c4.945,0,8.955,4.009,8.955,8.955v39.704c0,4.944-4.007,8.952-8.95,8.955 l-23.719,0.011c-25.615,0-30.575,12.172-30.575,30.035v39.389h56.285c5.363,0,9.524,4.683,8.892,10.009l-5.581,47.087 c-0.534,4.506-4.355,7.901-8.892,7.901h-50.453l-0.251,146.078h87.631c30.422,0,55.084-24.662,55.084-55.084V55.085 C408.786,24.662,384.124,0,353.701,0z"></path>
+              </g>
+            </svg>
+          </a>
+
+          <a
+            href="https://www.youtube.com/@marketastankova"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 461.001 461.001"
+              fill="#57534e"
+            >
+              <g stroke-width="0"></g>
+              <g stroke-linecap="round" stroke-linejoin="round"></g>
+              <g>
+                <g>
+                  <path d="M365.257,67.393H95.744C42.866,67.393,0,110.259,0,163.137v134.728 c0,52.878,42.866,95.744,95.744,95.744h269.513c52.878,0,95.744-42.866,95.744-95.744V163.137 C461.001,110.259,418.135,67.393,365.257,67.393z M300.506,237.056l-126.06,60.123c-3.359,1.602-7.239-0.847-7.239-4.568V168.607 c0-3.774,3.982-6.22,7.348-4.514l126.06,63.881C304.363,229.873,304.298,235.248,300.506,237.056z"></path>
+                </g>
+              </g>
+            </svg>
+          </a>
+        </div>
       </div>
     </footer>
   );
