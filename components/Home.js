@@ -22,10 +22,10 @@ export default function Home() {
         </blockquote>
         <br />
         <Image
-          src="/images/general/rohace.jpg"
+          src="/images/general/zapadni-tatry.jpg"
           alt="Na kopec"
-          width={1280}
-          height={390}
+          width={4707}
+          height={1700}
           priority
           className="next-image"
         />
@@ -40,10 +40,10 @@ export default function Home() {
         </p>
         <br />
         <Image
-          src="/images/general/nakopec.jpg"
+          src="/images/general/zapadni-tatry2.jpg"
           alt="Na kopec"
-          width={1280}
-          height={750}
+          width={4714}
+          height={1702}
           priority
           className="next-image"
         />

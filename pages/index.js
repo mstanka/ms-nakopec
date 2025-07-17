@@ -31,21 +31,21 @@ export default function Index({ posts, favoritePosts, tags }) {
         </p>
         <br />
         <Image
-          src="/images/general/rohace.jpg"
+          src="/images/general/zapadni-tatry.jpg"
           alt="Na kopec"
-          width={1280}
-          height={390}
+          width={4707}
+          height={1700}
           priority
           className="next-image"
         />
       </div>
 
-      <h2 className="mb-6 mt-28 text-center">Oblíbené příspěvky</h2>
+      <h2 className="mb-6 mt-20 md:mt-28 text-center">Oblíbené příspěvky</h2>
       <p className="mb-3">
-        Zde najdete výběr mých oblíbených příspěvků. Ve většině případů se jedná o
-        zajímavá fotogenická místa, která jsem na své cestě potkala. Někdy však zachycují i
-        místa, která nejsou na první pohled ničím zvláštní, ale mám na ně silné
-        vzpomínky. A někdy je to kombinace obojího...
+        Zde najdete výběr mých oblíbených příspěvků. Ve většině případů se jedná
+        o zajímavá fotogenická místa, která jsem na své cestě potkala. Někdy
+        však zachycují i místa, která nejsou na první pohled ničím zvláštní, ale
+        mám na ně silné vzpomínky. A někdy je to kombinace obojího...
       </p>
       <Search posts={favoritePosts} />
 
