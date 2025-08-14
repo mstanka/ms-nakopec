@@ -38,7 +38,7 @@ export default function PostCard({ post }) {
 
             <small className="text-stone-500">{post.data.date}</small>
           </Link>
-          <div className="border border-stone-300 text-stone-500 mt-1 rounded-lg">
+          <div className="border border-stone-300 text-stone-500 mt-1 rounded-md">
             {" "}
             {post.data.tags}
           </div>

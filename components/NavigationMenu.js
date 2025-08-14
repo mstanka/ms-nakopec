@@ -50,12 +50,12 @@ export default function NavigationMenu() {
         </PopoverButton>
       </div>
       <div className="hidden md:flex justify-between items-center sticky top-0">
-        <div className="relative flex  px-5 py-4  sm:p-1">
+        <div className="relative flex">
           {menuItems.map((item) => (
             <Link
               key={item.name}
               href={item.href}
-              className="flex items-center rounded-lg px-3 py-1 hover:bg-stone-100"
+              className="flex items-center rounded-md px-3 py-1 hover:bg-stone-300 hover:dark:bg-cyan-800"
               passHref
             >
               <item.icon
@@ -86,7 +86,7 @@ export default function NavigationMenu() {
           focus
           className="absolute inset-x-0 top-0 origin-top-right transform p-2 transition md:hidden"
         >
-          <div className="rounded-lg bg-stone-100  dark:bg-gray-800 shadow-lg ring-1 ring-black ring-opacity-5">
+          <div className="rounded-md bg-stone-100  dark:bg-gray-800 shadow-lg ring-1 ring-black ring-opacity-5">
             <div className="px-5 pt-5 pb-12 realative z-20">
               <div className="flex justify-end">
                 <PopoverButton className="inline-flex items-center justify-center rounded-md bg-stone-100 dark:bg-gray-800 p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-700 focus:dark:text-cyan-500">
@@ -97,10 +97,11 @@ export default function NavigationMenu() {
               <div className="mt-6">
                 <nav className="grid gap-y-8">
                   {menuItems.map((item) => (
-                    <a
+                    <Link
                       key={item.name}
                       href={item.href}
-                      className="-m-3 flex items-center rounded-md p-3 hover:bg-stone-50"
+                      className="flex items-center rounded-md px-3 py-1 hover:bg-stone-300 hover:dark:bg-cyan-800 -m-3"
+                      passHref
                     >
                       <item.icon
                         className="h-6 w-6 flex-shrink-0 text-cyan-700 dark:text-cyan-500"
@@ -109,7 +110,7 @@ export default function NavigationMenu() {
                       <span className="ml-3 text-base font-medium text-stone-600 dark:text-stone-400">
                         {item.name}
                       </span>
-                    </a>
+                    </Link>
                   ))}
                 </nav>
               </div>

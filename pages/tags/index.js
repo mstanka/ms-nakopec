@@ -17,11 +17,11 @@ export default function Tags({ tags, posts }) {
         <NavigationMenu />
       </header>
       <h1 className="mt-6 mb-12">Kategorie</h1>
-      <ul className="flex flex-wrap justify-center p-20 gap-10">
+      <ul className="flex flex-wrap justify-center p-6 md:p-20 gap-5 md:gap-10">
         {tags.map((tag) => (
           <li
             key={tag.filePath}
-            className="flex flex-wrap justify-center items-stretch gap-4 border rounded-lg px-6 py-2 bg-cyan-700 text-stone-200"
+            className="ms-tag flex flex-wrap justify-center items-stretch gap-4"
           >
             <Link href={`/tags/${tag.data.slug}`} className="link text-2xl">
               {tag.data.title}

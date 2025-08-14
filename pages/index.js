@@ -24,7 +24,7 @@ export default function Index({ posts, favoritePosts, tags }) {
           jednotlivé &#34;kopečky života&#34; a jak hledám důvod, proč se pořád
           o něco snažím a k čemu je to vlastně dobré...
           <Link as={`/about`} href={`/about`} passHref>
-            <span className="text-sm border border-stone-300 px-4 py-1 rounded-lg ms-2">
+            <span className="text-sm border border-stone-300 px-4 py-1 rounded-md ms-2">
               číst dál
             </span>
           </Link>
@@ -54,7 +54,7 @@ export default function Index({ posts, favoritePosts, tags }) {
         {tags.map((tag) => (
           <li
             key={tag.filePath}
-            className="flex flex-wrap justify-center items-stretch gap-4 border rounded-lg px-6 py-2 bg-cyan-700 text-stone-200"
+            className="flex flex-wrap justify-center items-stretch gap-4 ms-tag"
           >
             <Link href={`/tags/${tag.data.slug}`} className="link text-xl">
               {tag.data.title}
