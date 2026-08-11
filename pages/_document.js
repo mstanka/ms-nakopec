@@ -34,7 +34,7 @@ export default class MyDocument extends Document {
           <meta name="twitter:description" content={meta.description} />
           <meta name="twitter:image" content={meta.image} /> */}
           {/* Global Site Tag (gtag.js) - Google Analytics */}
-          <Script
+          {/* <Script
             strategy="afterInteractive"
             defer
             src={`https://www.googletagmanager.com/gtag/js?id=${NEXT_PUBLIC_GA_ID}`}
@@ -52,7 +52,7 @@ export default class MyDocument extends Document {
               });
               `,
             }}
-          />
+          /> */}
           {/* Google Tag Manager */}
           <Script
             id="gtm-start"
