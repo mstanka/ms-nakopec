@@ -1,5 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next";
 export default class MyDocument extends Document {
   render() {
     const NEXT_PUBLIC_GA_ID = process.env.NEXT_PUBLIC_GA_ID;
@@ -73,6 +74,7 @@ export default class MyDocument extends Document {
             }}
           ></noscript>
           <Main />
+          <Analytics />
           <NextScript />
         </body>
       </Html>
